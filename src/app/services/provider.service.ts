@@ -21,4 +21,11 @@ export class ProviderService {
   getProviders(): Observable<Provider[]> {
     return this.http.get<Provider[]>(this.apiUrl);
   }
+
+  deleteProvider(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}${id}`);
+  }
+  addProvider(provider: any): Observable<Provider> {
+    return this.http.post<Provider>(this.apiUrl, provider);
+  }
 }

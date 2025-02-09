@@ -5,15 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListProvidersComponent } from './list-providers/list-providers.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddProviderComponent } from './add-provider/add-provider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListProvidersComponent
+    ListProvidersComponent,
+    NavbarComponent,
+    AddProviderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent]

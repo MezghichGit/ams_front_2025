@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Liste des Fournisseurs</h2>
 
-    <a class="btn btn-primary">Add</a>
+    <a class="btn btn-primary" (click)="navigateToList()" >Add</a>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -19,7 +19,7 @@
           <td>{{ provider.name }}</td>
           <td>{{ provider.address }}</td>
           <td>{{ provider.email }}</td>
-          <td><a class="btn btn-danger">Delete</a></td>
+          <td><a class="btn btn-danger" (click)="deleteProvider(provider.id)">Delete</a></td>
           <td><a class="btn btn-warning">Update</a></td>
         </tr>
       </tbody>
