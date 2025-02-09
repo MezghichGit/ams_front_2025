@@ -1,1 +1,28 @@
-<h2 align="center">Liste des providers</h2>
+<div class="container">
+    <h2>Liste des Fournisseurs</h2>
+
+    <a class="btn btn-primary">Add</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Delete</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provider of providers">
+          <td>{{ provider.id }}</td>
+          <td>{{ provider.name }}</td>
+          <td>{{ provider.address }}</td>
+          <td>{{ provider.email }}</td>
+          <td><a class="btn btn-danger">Delete</a></td>
+          <td><a class="btn btn-warning">Update</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

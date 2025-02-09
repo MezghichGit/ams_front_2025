@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Provider, ProviderService } from '../services/provider.service';
 
 @Component({
   selector: 'app-list-providers',
@@ -6,6 +7,20 @@ import { Component } from '@angular/core';
   templateUrl: './list-providers.component.html',
   styleUrl: './list-providers.component.css'
 })
-export class ListProvidersComponent {
+export class ListProvidersComponent implements OnInit {
+  providers: Provider[] = [];
 
+  constructor(private providerService: ProviderService) {
+  }
+
+  ngOnInit(): void {
+    this.loadProviders();
+  }
+
+  loadProviders(): void {
+    this.providerService.getProviders().subscribe({
+      next: (data) => this.providers = data,
+      error: (err) => console.error('Erreur lors du chargement des fournisseurs:', err)
+    });
+  }
 }
