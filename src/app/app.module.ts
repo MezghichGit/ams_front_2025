@@ -8,13 +8,15 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { FormsModule } from '@angular/forms';
+import { PreffixeProvPipe } from './pipes/preffixe-prov.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListProvidersComponent,
     NavbarComponent,
-    AddProviderComponent
+    AddProviderComponent,
+    PreffixeProvPipe
   ],
   imports: [
     BrowserModule,
