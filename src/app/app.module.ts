@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { FormsModule } from '@angular/forms';
 import { PreffixeProvPipe } from './pipes/preffixe-prov.pipe';
+import { UpdateProviderComponent } from './update-provider/update-provider.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PreffixeProvPipe } from './pipes/preffixe-prov.pipe';
     ListProvidersComponent,
     NavbarComponent,
     AddProviderComponent,
-    PreffixeProvPipe
+    PreffixeProvPipe,
+    UpdateProviderComponent
   ],
   imports: [
     BrowserModule,

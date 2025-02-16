@@ -29,4 +29,12 @@ export class ProviderService {
   addProvider(provider: any): Observable<Provider> {
     return this.http.post<Provider>(this.apiProviders, provider);
   }
+
+  updateProvider(provider: any): Observable<Provider> {
+    return this.http.put<Provider>(this.apiProviders, provider);
+  }
+
+  getProvider(id: number): Observable<Provider> {
+    return this.http.get<Provider>(`${this.apiProviders}${id}`);
+  }
 }

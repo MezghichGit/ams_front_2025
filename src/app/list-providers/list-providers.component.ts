@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListProvidersComponent implements OnInit {
 
+
   providers: Provider[] = [];
 
   constructor(private providerService: ProviderService, private router:Router) {
@@ -41,4 +42,9 @@ export class ListProvidersComponent implements OnInit {
       });
     }
   }
+
+  updateProvider(id: number) {
+    this.router.navigate(["updateProvider", id]);
+  }
+  
 }

@@ -20,7 +20,7 @@
           <td>{{ provider.address |uppercase}}</td>
           <td>{{ provider.email }}</td>
           <td><a class="btn btn-danger" (click)="deleteProvider(provider.id)">Delete</a></td>
-          <td><a class="btn btn-warning">Update</a></td>
+          <td><a class="btn btn-warning" (click)="updateProvider(provider.id)">Update</a></td>
         </tr>
       </tbody>
     </table>
