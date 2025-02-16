@@ -1,0 +1,27 @@
+<h2 align="center">Liste des Articles</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Label</th>
+        <th>Price</th>
+        <th>Picture</th>
+        <th>Provider Name</th>
+        <th>Provider Email</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{ article.id }}</td>
+        <td>{{ article.label }}</td>
+        <td>{{ article.price}}</td>
+        <td>{{ article.picture }}</td>
+        <td>{{ article.provider.name}}</td>
+        <td>{{ article.provider.email }}</td>
+        <td><a class="btn btn-danger">Delete</a></td>
+        <td><a class="btn btn-warning">Update</a></td>
+      </tr>
+    </tbody>
+  </table>
