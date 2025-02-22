@@ -13,6 +13,7 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
+import { SavModule } from './sav/sav.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UpdateArticleComponent } from './update-article/update-article.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SavModule
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent]
