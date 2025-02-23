@@ -18,6 +18,8 @@ import { RegistrationModule } from './registration/registration.module';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,14 @@ import { LogoutComponent } from './logout/logout.component';
     SavModule,
     RegistrationModule
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService, // Remplacez par votre interceptor personnalisé
+      multi: true
+    },
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
