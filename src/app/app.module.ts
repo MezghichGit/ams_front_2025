@@ -15,6 +15,7 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
 import { SavModule } from './sav/sav.module';
 import { RegistrationModule } from './registration/registration.module';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegistrationModule } from './registration/registration.module';
     UpdateProviderComponent,
     ListArticlesComponent,
     AddArticleComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
