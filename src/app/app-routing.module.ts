@@ -12,7 +12,8 @@ const routes: Routes = [
 { path: "updateProvider/:id", component: UpdateProviderComponent},
 { path: "listArticles", component: ListArticlesComponent},
 { path: "addArticle", component: AddArticleComponent},
-{ path: 'sav', loadChildren: () => import('./sav/sav.module').then(m => m.SavModule) }
+{ path: 'sav', loadChildren: () => import('./sav/sav.module').then(m => m.SavModule) },
+{ path: 'registration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) }
 ];
 
 @NgModule({

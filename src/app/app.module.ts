@@ -14,6 +14,7 @@ import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
 import { SavModule } from './sav/sav.module';
+import { RegistrationModule } from './registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SavModule } from './sav/sav.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    SavModule
+    SavModule,
+    RegistrationModule
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent]
