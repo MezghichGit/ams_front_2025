@@ -16,6 +16,8 @@ import { UpdateArticleComponent } from './update-article/update-article.componen
 import { SavModule } from './sav/sav.module';
 import { RegistrationModule } from './registration/registration.module';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SignupComponent } from './signup/signup.component';
     ListArticlesComponent,
     AddArticleComponent,
     UpdateArticleComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

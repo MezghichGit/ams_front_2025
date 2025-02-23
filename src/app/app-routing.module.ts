@@ -6,6 +6,8 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
 { path: "listProvider", component: ListProvidersComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
 { path: "listArticles", component: ListArticlesComponent},
 { path: "addArticle", component: AddArticleComponent},
 { path: "signup", component: SignupComponent},
+{ path: "login", component: LoginComponent},
+{ path: "logout", component: LogoutComponent},
 { path: 'sav', loadChildren: () => import('./sav/sav.module').then(m => m.SavModule) },
 { path: 'registration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) }
 ];

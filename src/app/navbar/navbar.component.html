@@ -2,13 +2,15 @@
     <a class="navbar-brand" href="#">AMS</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLink="/listProvider" routerLinkActive="active">Liste Providers</a>
-            <a class="nav-item nav-link" routerLink="/addProvider"  routerLinkActive="active">Ajouter Provider</a>
-            <a class="nav-item nav-link" routerLink="/listArticles"  routerLinkActive="active">Liste des articles</a>
-            <a class="nav-item nav-link" routerLink="/addArticle"  routerLinkActive="active">Add Article</a>
-            <a class="nav-item nav-link" routerLink="/sav"  routerLinkActive="active">SAV</a>
-            <a class="nav-item nav-link" routerLink="/registration"  routerLinkActive="active">Registration</a>
-            <a class="nav-item nav-link" routerLink="/signup"  routerLinkActive="active">Sign up</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/listProvider" routerLinkActive="active">Liste Providers</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/addProvider"  routerLinkActive="active">Ajouter Provider</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/listArticles"  routerLinkActive="active">Liste des articles</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/addArticle"  routerLinkActive="active">Add Article</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/sav"  routerLinkActive="active">SAV</a>
+            <a class="nav-item nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/registration"  routerLinkActive="active">Registration</a>
+            <a class="nav-item nav-link" *ngIf="!loginService.isUserLoggedIn()"  routerLink="/signup"  routerLinkActive="active">Sign up</a>
+            <a class="nav-link nav-link" *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+            <a class="nav-link nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" routerLinkActive="active">Logout</a>
         </div>
     </div>
 </nav>
