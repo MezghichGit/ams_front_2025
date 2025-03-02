@@ -1,6 +1,6 @@
 // src/app/services/provider.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 
@@ -27,7 +27,11 @@ export class ProviderService {
     return this.http.delete<void>(`${this.apiProviders}${id}`);
   }
   addProvider(provider: any): Observable<Provider> {
+    const headers = new HttpHeaders();
+   // headers.append('Content-Type', 'multipart/form-data');
+  // return this.http.post<Provider>(this.apiProviders, provider,{headers});
     return this.http.post<Provider>(this.apiProviders, provider);
+    
   }
 
   updateProvider(provider: any): Observable<Provider> {

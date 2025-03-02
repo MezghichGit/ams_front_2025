@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
   styleUrl: './add-provider.component.css'
 })
 export class AddProviderComponent implements OnInit {
- 
+  selectedFile!: File;
   constructor(private providerService: ProviderService, private router: Router) { }
   ngOnInit() {
   }
-  createProvider(myform: any) {
+  //Gets called when the user selects an image
+  public onFileChanged(event:any) {
+    //Select File
+    this.selectedFile = event.target.files[0];
+    //console.log(this.selectedFile);
+  }
+  /*createProvider(myform: any) {
     let provider  ={
       name: myform.value.name,
       address: myform.value.address,
@@ -27,6 +33,25 @@ export class AddProviderComponent implements OnInit {
       }
     );
     
-  }
+  }*/
+    createProvider(myform:any) {
+      const provider = new FormData();
+      provider.append('imageFile', this.selectedFile,this.selectedFile.name);
+      //provider.append('imageName',this.selectedFile.name);
+      provider.append('name', myform.value.providerName);
+      provider.append('email', myform.value.providerEmail);
+      provider.append('address', myform.value.providerAdress);
+  
+      this.providerService.addProvider(provider).subscribe(
+        (response) =>{
+          console.log(response);
+          this.router.navigate(['listProvider']);
+        }, error => {
+          console.error(error);
+          // Handle error, e.g., show an error message
+        }
+      );
+  
+    }
 
 }
